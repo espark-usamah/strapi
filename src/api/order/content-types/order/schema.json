@@ -1,10 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "products",
+  "collectionName": "orders",
   "info": {
-    "singularName": "product",
-    "pluralName": "products",
-    "displayName": "product",
+    "singularName": "order",
+    "pluralName": "orders",
+    "displayName": "order",
     "description": ""
   },
   "options": {
@@ -16,97 +16,90 @@
     }
   },
   "attributes": {
-    "title": {
+    "email": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "string",
-      "required": true,
-      "maxLength": 100,
-      "minLength": 3
-    },
-    "description": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "richtext",
-      "minLength": 100
-    },
-    "product_image": {
-      "type": "media",
-      "multiple": true,
-      "required": true,
-      "allowedTypes": [
-        "images"
-      ],
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
-    "stock": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "integer",
-      "default": 100,
+      "type": "email",
       "required": true
     },
-    "slug": {
+    "order_id": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
       "type": "uid",
-      "required": true,
-      "minLength": 3,
-      "maxLength": 110
-    },
-    "category": {
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      },
-      "type": "enumeration",
-      "enum": [
-        "clothes",
-        "mobile"
-      ],
-      "default": "mobile",
       "required": true
     },
-    "color": {
+    "payment_info": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "enumeration",
-      "enum": [
-        "black",
-        "blue",
-        "red",
-        "golden"
-      ],
-      "required": true,
-      "default": "black"
+      "type": "json"
     },
-    "price": {
+    "products": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "json",
+      "required": true
+    },
+    "address": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "richtext",
+      "required": true
+    },
+    "name": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "transection_id": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "amount": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
       "type": "integer",
+      "required": true
+    },
+    "status": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "canceled",
+        "in progress",
+        "completed"
+      ],
+      "default": "pending",
       "required": true
     }
   }
